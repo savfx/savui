@@ -1,0 +1,8 @@
+@each $type, $color in $is-theme-colors
+  .sav-radio.#{$type}
+    > .as-text
+      &::before
+        border-color: darken($color, 10)
+    > input
+      &:checked + .as-text::after
+        background-color: darken($color, 10)

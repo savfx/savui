@@ -1,0 +1,11 @@
+@each $type, $color in $is-theme-colors
+  .sav-input.#{$type}
+    border-color: $color
+    &.is-active,
+    &:active,
+    &:hover,
+    &:focus
+      border-color: darken($element-border-color, 10)
+    &.is-disabled,
+    &:disabled
+      border-color: $element-border-color

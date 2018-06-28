@@ -6,55 +6,64 @@
   <link rel="stylesheet" type="text/css" href="../static/css/app.css">
 </head>
 <body>
-  <label class="sav-label">常规元素</label>
-  <button class="sav-btn">按钮</button>
-  <input class="sav-input"/>
-  <div class="sav-radio-group">
-    <label class="sav-radio">
-      <input type="radio" name="radio1" value="value1" />
-      <span class="as-text">单选1</span>
-    </label>
-    <label class="sav-radio">
-      <input type="radio" name="radio1" value="value2" />
-      <span class="as-text">单选2</span>
-    </label>    
+  <div id="app">
+    <section v-for="(section, index) in sections">
+      <label class="sav-label">{{section.text}}</label>
+      <button class="sav-btn" :class="section.class">按钮</button>
+      <button class="sav-btn is-disabled" :class="section.class">禁用</button>
+      <input class="sav-input" :class="section.class"/>
+      <input class="sav-input" disabled :class="section.class"/>
+      <div class="sav-radio-group">
+        <label class="sav-radio" :class="section.class">
+          <input type="radio" :name="'radio-' + index" value="value1" />
+          <span class="as-text">单选1</span>
+        </label>
+        <label class="sav-radio" :class="section.class">
+          <input type="radio" checked :name="'radio-' + index" value="value2" />
+          <span class="as-text">单选2</span>
+        </label> 
+        <label class="sav-radio is-disabled" :class="section.class">
+          <input type="radio" disabled :name="'radio-' + index" value="value3" />
+          <span class="as-text">禁用</span>
+        </label>   
+      </div>
+      <div class="sav-check-group">
+        <label class="sav-check" :class="section.class">
+          <input type="checkbox" name="check" value="value1" />
+          <span class="as-text">多选1</span>
+        </label>
+        <label class="sav-check" :class="section.class">
+          <input type="checkbox" checked name="check" value="value2" />
+          <span class="as-text">多选2</span>
+        </label>
+        <label class="sav-check is-disabled" :class="section.class">
+          <input type="checkbox" disabled name="check" value="value2" />
+          <span class="as-text">禁用</span>
+        </label>
+      </div>
+      <p></p>
+    </section>
+    <textarea class="sav-text"></textarea>
+    <textarea class="sav-text" disabled></textarea>
   </div>
-  <div class="sav-check-group">
-    <label class="sav-check">
-      <input type="checkbox" name="check1" value="value1" />
-      <span class="as-text">多选1</span>
-    </label>
-    <label class="sav-check">
-      <input type="checkbox" name="check1" value="value2" />
-      <span class="as-text">多选2</span>
-    </label>    
-  </div>
-  <p></p>
-  <label class="sav-label">禁用元素</label>
-  <button class="sav-btn" disabled>按钮</button>
-  <input class="sav-input" disabled />
-  <div class="sav-radio-group">
-    <label class="sav-radio is-disabled">
-      <input type="radio" disabled checked name="radio2" value="value1" />
-      <span class="as-text">单选1</span>
-    </label>
-    <label class="sav-radio">
-      <input type="radio" disabled name="radio2" value="value2" />
-      <span class="as-text">单选2</span>
-    </label>    
-  </div>
-  <div class="sav-check-group">
-    <label class="sav-check is-disabled">
-      <input type="checkbox" disabled checked name="check2" value="value1" />
-      <span class="as-text">多选1</span>
-    </label>
-    <label class="sav-check">
-      <input type="checkbox" disabled name="check2" value="value2" />
-      <span class="as-text">多选2</span>
-    </label>    
-  </div>
-  <p></p>
-  <textarea class="sav-text"></textarea>
-  <textarea class="sav-text" disabled></textarea>
+  
+  <script type="text/javascript" src="http://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
+
+  <script type="text/javascript">
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        sections: [
+          {class: '', text: '常规元素'}, 
+          {class: 'is-primary', text: '主要元素'}, 
+          {class: 'is-info', text: '信息元素'},
+          {class: 'is-success', text: '成功元素'},
+          {class: 'is-warn', text: '警告元素'}, 
+          {class: 'is-error', text: '失败元素'},
+        ]
+      }
+    })
+  </script>
+
 </body>
 </html>
