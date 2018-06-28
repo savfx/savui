@@ -1,0 +1,44 @@
+
+.sav-input,
+.sav-text
+
+  padding: 0.5rem
+  position: relative // 需要设成相对的, 方便内嵌或定位
+  box-sizing: border-box // 盒子
+  display: inline-block // 块
+  outline: none // 去除默认焦点
+  border: 1px solid transparent  // 去除默认边框样式 + 去除 Border宽度
+  border-radius: $element-border-radius
+  
+  color: $element-color
+  background-color: $element-background-color
+  border-color: $element-border-color
+
+  font-family: $element-font-family // 字体
+  line-height: $element-line-height // 行高
+  font-size: $element-font-size
+
+  &.is-active,
+  &:active,
+  &:hover,
+  &:focus
+    background-color: lighten($element-border-color, 20)
+    border-color: darken($element-border-color, 10)
+
+  &.is-disabled,
+  &:disabled
+    user-select: none
+    pointer-events: none
+    cursor: default
+    opacity: 0.6
+    box-shadow: none !important // 去除阴影效果
+
+.sav-input
+  // 居中对齐
+  vertical-align: middle
+
+.sav-text
+  resize: vertical
+  &.is-disabled,
+  &:disabled
+    resize: none

@@ -1,0 +1,23 @@
+{
+  "name": "savui",
+  "version": "1.0.1",
+  "description": "savui library",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savfx/savui.git"
+  },
+  "scripts": {
+    "sync": "node build.js sync"
+  },
+  "author": {
+    "name": "jetiny",
+    "email": "86287344@qq.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/savfx/savui/issues"
+  },
+  "homepage": "https://github.com/savfx/savui#readme",
+	"devDependencies": {
+	}
+}

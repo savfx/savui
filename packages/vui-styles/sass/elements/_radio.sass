@@ -1,0 +1,64 @@
+.sav-radio
+  cursor: $element-cursor
+  position: relative // 需要设成相对的, 方便内嵌或定位
+  box-sizing: border-box // 盒子
+  display: inline-block // 块
+  padding: 0.5rem 0.7rem
+
+  font-family: $element-font-family // 字体
+  line-height: $element-line-height // 行高
+  font-size: $element-font-size
+
+  &.is-block
+    display: block
+  &.is-disabled
+    user-select: none
+    pointer-events: none
+    cursor: default
+  > input
+    margin: 0
+    padding: 0
+    opacity: 0
+    // 选中
+    &:checked + .as-text::after
+      background-color: darken($element-border-color, 10)
+      transform: scale(0.5)
+    // 获得焦点
+    &:focus + .as-text::before
+      transform: scale(1.1)
+    // 禁用
+    &:disabled + .as-text
+      user-select: none
+      pointer-events: none
+      cursor: default
+      opacity: 0.6
+  > .as-text
+    position: relative
+    vertical-align: middle
+    display: inline-block
+    display: inline-flex
+    color: $element-color
+    margin: 1px 0
+    &::before,
+    &::after
+      box-sizing: content-box
+      position: absolute
+      content: ''
+      top: -2px
+      left: -1.7em
+      width: 1em
+      height: 1em
+      border: 2px solid transparent
+      transition: 0.28s ease
+      border-radius: 1em
+    &::before
+      border-color: darken($element-border-color, 10)
+    &::after
+      transform: scale(0)
+
+.sav-radio-group
+  display: inline-block
+  &.is-vertical
+    display: block
+    .sav-radio
+      display: block

@@ -1,0 +1,87 @@
+
+.sav-btn
+  text-decoration: none // 去除下划线
+  vertical-align: middle // 垂直居中
+  text-align: center // 稳步居中
+  padding: 0.5rem 0.75rem
+  cursor: $element-cursor // 鼠标
+  
+  position: relative // 需要设成相对的, 方便内嵌或定位
+  box-sizing: border-box // 盒子
+  display: inline-block // 块
+  outline: none // 去除默认焦点
+  border: 1px solid transparent  // 去除默认边框样式 + 去除 Border宽度
+  border-radius: $element-border-radius
+  
+  color: $element-color
+  background-color: $element-background-color
+  border-color: $element-border-color
+
+  font-family: $element-font-family // 字体
+  line-height: $element-line-height // 行高
+  font-size: $element-font-size
+
+  &:hover,
+  &:focus
+    background-color: darken($element-background-color, 5)
+
+  &.is-active,
+  &:active
+    background-color: darken($element-background-color, 10)
+
+  &.is-disabled,
+  &:disabled
+    user-select: none
+    pointer-events: none
+    cursor: default
+    opacity: 0.6
+    box-shadow: none !important // 去除阴影效果
+
+// // 图标
+// > .as-icon
+//   +make-icon-addon
+// // 加载中
+// &.is-loading
+//   pointer-events: none
+//   color: transparent !important
+//   &::after
+//     +make-icon-loader
+//     +make-spin-around
+//     +center(1.2em)
+
+// .sav-btn-group
+//   &.is-horizontal
+//     display: inline-block
+//     vertical-align: middle
+//     +clearfix
+//     .sav-btn
+//       float: left
+//       margin-left: -1px
+//       &:not(:first-child):not(:last-child)
+//         border-radius: 0
+//       &:first-child
+//         margin-left: 0
+//         &:not(:last-child)
+//           border-bottom-right-radius: 0
+//           border-top-right-radius: 0
+//       &:last-child:not(:first-child)
+//         border-bottom-left-radius: 0
+//         border-top-left-radius: 0
+//   &.is-vertical
+//     display: inline-block
+//     vertical-align: middle
+//     .sav-btn
+//       display: block
+//       margin-top: -1px
+//       width: 100%
+//       max-width: 100%
+//       &:not(:first-child):not(:last-child)
+//         border-radius: 0
+//       &:first-child
+//         margin-top: 0
+//         &:not(:last-child)
+//           border-bottom-left-radius: 0
+//           border-bottom-right-radius: 0
+//       &:last-child:not(:first-child)
+//         border-top-left-radius: 0
+//         border-top-right-radius: 0
