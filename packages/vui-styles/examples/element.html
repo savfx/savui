@@ -17,7 +17,7 @@
         <i class="fa-times"></i>
       </button>
       <button class="sav-btn">
-        <i class="pt-check"></i>
+        <i class="pt-check is-warn"></i>
         <span>Icon</span>
         <i class="pt-cancel"></i>
       </button>
@@ -26,19 +26,19 @@
     <section>
       <button class="sav-btn has-hover-open">
         <span>Icon</span>
-        <i class="is-icon-caret"></i>
+        <i class="is-icon-caret is-primary"></i>
       </button>
       <button class="sav-btn has-hover-open">
         <span>Icon</span>
-        <i class="is-icon-arrow"></i>
+        <i class="is-icon-arrow is-info"></i>
       </button>
       <button class="sav-btn">
         <span>Icon</span>
-        <i class="is-icon-right"></i>
+        <i class="is-icon-right is-warn"></i>
       </button>
       <button class="sav-btn">
         <span>Icon</span>
-        <i class="is-icon-close"></i>
+        <i class="is-icon-close is-error"></i>
       </button>
     </section>
     <template v-for="(size, sindex) in sizes">
@@ -99,13 +99,13 @@
     <h3>Font-Awesome</h3>
     <section>
       <template v-for="f in fa">
-        <button class="sav-btn is-square is-sm"><i :class="f"></i></button>
+        <button class="sav-btn is-square is-xs"><i class="is-info" :class="f"></i></button>
       </template>
     </section>
     <h3>Photon</h3>
     <section>
       <template v-for="f in pt">
-        <button class="sav-btn is-square is-circle is-sm"><i :class="f"></i></button>
+        <button class="sav-btn is-square is-circle is-xs"><i class="is-warn" :class="f"></i></button>
       </template>
     </section>
   </div>

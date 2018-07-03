@@ -143,6 +143,9 @@
   transform: translate(0, 0)
   width: 1em
   height: 1em
+  @each $theme-type, $theme-color in $is-theme-colors
+    &.#{$theme-type}
+      color: $theme-color
 
 // 添加字体库
 =make-icon-font-library($icon-font-class, $icon-font-family, $icon-font-path, $icon-font-file, $icon-font-version)
