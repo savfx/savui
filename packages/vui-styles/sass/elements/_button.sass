@@ -3,7 +3,7 @@
   text-decoration: none // 去除下划线
   vertical-align: middle // 垂直居中
   text-align: center // 稳步居中
-  padding: 0.5rem 0.75rem
+  padding: $element-padding-height $element-padding-width
   cursor: $element-cursor // 鼠标
   
   position: relative // 需要设成相对的, 方便内嵌或定位
@@ -36,6 +36,40 @@
     cursor: default
     opacity: 0.6
     box-shadow: none !important // 去除阴影效果
+  &.is-square
+    padding: $element-padding-height
+  &.is-circle
+    border-radius: 50%
+
+@each $type, $color in $is-theme-colors
+  .sav-btn.#{$type}
+      color: $text-light-color
+      border-color: darken($color, 2)
+      background-color: $color
+      &:hover,
+      &:focus
+        background-color: darken($color, 6)
+      &.is-active,
+      &:active
+        background-color: darken($color, 10)
+
+.sav-btn
+  &.is-xs
+    font-size: $element-font-size-xs
+    padding: $element-padding-height-xs $element-padding-width-xs
+    &.is-square
+      padding: $element-padding-height-xs
+  &.is-sm
+    font-size: $element-font-size-sm
+    padding: $element-padding-height-sm $element-padding-width-sm
+    &.is-square
+      padding: $element-padding-height-sm
+  &.is-lg
+    font-size: $element-font-size-lg
+    padding: $element-padding-height-lg $element-padding-width-lg
+    &.is-square
+      padding: $element-padding-height-lg
+
 
 // // 图标
 // > .as-icon

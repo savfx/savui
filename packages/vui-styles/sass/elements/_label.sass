@@ -1,6 +1,15 @@
 .sav-label
-  padding: 0.5rem
+  padding: $element-padding-height $element-padding-width
   font-family: $element-font-family // 字体
   line-height: $element-line-height // 行高
   font-size: $element-font-size
   display: inline-block
+  &.is-xs
+    font-size: $element-font-size-xs
+    padding: $element-padding-height-xs $element-padding-width-xs
+  &.is-sm
+    font-size: $element-font-size-sm
+    padding: $element-padding-height-sm $element-padding-width-sm
+  &.is-lg
+    font-size: $element-font-size-lg
+    padding: $element-padding-height-lg $element-padding-width-lg

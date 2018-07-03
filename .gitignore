@@ -39,3 +39,5 @@ jspm_packages
 /package-lock.json
 /tmp
 static
+dist
+package-lock.json

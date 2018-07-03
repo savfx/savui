@@ -2,7 +2,7 @@
 .sav-input,
 .sav-text
 
-  padding: 0.5rem
+  padding: $element-padding-height $element-padding-width *2 / 3
   position: relative // 需要设成相对的, 方便内嵌或定位
   box-sizing: border-box // 盒子
   display: inline-block // 块
@@ -42,3 +42,27 @@
   &.is-disabled,
   &:disabled
     resize: none
+
+@each $type, $color in $is-theme-colors
+  .sav-input.#{$type},
+  .sav-text.#{$type}
+    border-color: $color
+    &.is-active,
+    &:active,
+    &:hover,
+    &:focus
+      border-color: darken($element-border-color, 10)
+    &.is-disabled,
+    &:disabled
+      border-color: $element-border-color
+
+.sav-input
+  &.is-xs
+    font-size: $element-font-size-xs
+    padding: $element-padding-height-xs $element-padding-width-xs *2 / 3
+  &.is-sm
+    font-size: $element-font-size-sm
+    padding: $element-padding-height-sm $element-padding-width-sm *2 / 3
+  &.is-lg
+    font-size: $element-font-size-lg
+    padding: $element-padding-height-lg $element-padding-width-lg *2 / 3

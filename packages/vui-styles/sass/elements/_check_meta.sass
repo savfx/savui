@@ -1,8 +1,0 @@
-@each $type, $color in $is-theme-colors
-  .sav-check.#{$type}
-    > .as-text
-      &::before
-        border-color: darken($color, 10)
-    > input
-      &:checked + .as-text::before
-        background-color: darken($color, 10)

@@ -3,8 +3,9 @@
   "version": "1.0.1",
   "description": "",
   "scripts": {
-    "build-sass": "node-sass --output-style=compressed -r sass -o static/css",
-    "dev-sass": "node-sass -w --output-style=expanded -r sass -o static/css",
+    "build-icon": "stdx scripts/build-icon.js",
+    "build-sass": "node-sass --output-style=compressed -r sass -o dist/css",
+    "dev-sass": "node-sass -w --output-style=expanded -r sass -o dist/css",
     "lint": "standard-sass"
   },
   "author": {
@@ -16,6 +17,9 @@
     "url": "https://github.com/savfx/savui/issues"
   },
   "homepage": "https://github.com/savfx/savui#readme",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "photonkit": "^0.1.2"
   }
 }

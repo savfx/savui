@@ -3,48 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="../static/css/app.css">
+  <link rel="stylesheet" type="text/css" href="../dist/css/sav-vui.css">
 </head>
 <body>
+  <script type="text/javascript" src="../dist/icons/font-awesome.js"></script>
+  <script type="text/javascript" src="../dist/icons/photon.js"></script>
   <div id="app">
+    <h3>按钮图标</h3>
+    <section>
+      <button class="sav-btn">
+        <i class="fa-check"></i>
+        <span>Icon</span>
+        <i class="fa-times"></i>
+      </button>
+      <button class="sav-btn">
+        <i class="pt-check"></i>
+        <span>Icon</span>
+        <i class="pt-cancel"></i>
+      </button>
+    </section>
+    <h3>样式图标</h3>
+    <section>
+      <button class="sav-btn has-hover-open">
+        <span>Icon</span>
+        <i class="is-icon-caret"></i>
+      </button>
+      <button class="sav-btn has-hover-open">
+        <span>Icon</span>
+        <i class="is-icon-arrow"></i>
+      </button>
+      <button class="sav-btn">
+        <span>Icon</span>
+        <i class="is-icon-right"></i>
+      </button>
+      <button class="sav-btn">
+        <span>Icon</span>
+        <i class="is-icon-close"></i>
+      </button>
+    </section>
+    <template v-for="(size, sindex) in sizes">
+    <h3>{{size.text}}</h3>
     <section v-for="(section, index) in sections">
-      <label class="sav-label">{{section.text}}</label>
-      <button class="sav-btn" :class="section.class">按钮</button>
-      <button class="sav-btn is-disabled" :class="section.class">禁用</button>
-      <input class="sav-input" :class="section.class"/>
-      <input class="sav-input" disabled :class="section.class"/>
+      <label class="sav-label" :class="[size.class]">{{section.text}}</label>
+      <button class="sav-btn" :class="[section.class, size.class]">按钮</button>
+      <button class="sav-btn is-disabled" :class="[section.class, size.class]">禁用</button>
+      <button class="sav-btn has-hover-open" :class="[section.class, size.class]">
+        <span>Icon</span>
+        <i class="is-icon-arrow"></i>
+      </button>
+      <button class="sav-btn is-disabled" :class="[section.class, size.class]">禁用</button>
+      <button class="sav-btn is-square" :class="[section.class, size.class]">
+        <i class="fa-times"></i>
+      </button>
+      <button class="sav-btn is-square is-circle is-disabled" :class="[section.class, size.class]">
+        <i class="fa-github"></i>
+      </button>
+      <input class="sav-input" :class="[section.class, size.class]"/>
+      <input class="sav-input" disabled :class="[section.class, size.class]"/>
       <div class="sav-radio-group">
-        <label class="sav-radio" :class="section.class">
-          <input type="radio" :name="'radio-' + index" value="value1" />
+        <label class="sav-radio" :class="[section.class, size.class]">
+          <input type="radio" :name="'radio-' + String(index) + String(sindex)" value="value1" />
           <span class="as-text">单选1</span>
         </label>
-        <label class="sav-radio" :class="section.class">
-          <input type="radio" checked :name="'radio-' + index" value="value2" />
+        <label class="sav-radio" :class="[section.class, size.class]">
+          <input type="radio" checked :name="'radio-' + String(index) + String(sindex)" value="value2" />
           <span class="as-text">单选2</span>
         </label> 
-        <label class="sav-radio is-disabled" :class="section.class">
-          <input type="radio" disabled :name="'radio-' + index" value="value3" />
+        <label class="sav-radio is-disabled" :class="[section.class, size.class]">
+          <input type="radio" disabled :name="'radio-' + String(index) + String(sindex)" value="value3" />
           <span class="as-text">禁用</span>
         </label>   
       </div>
       <div class="sav-check-group">
-        <label class="sav-check" :class="section.class">
+        <label class="sav-check" :class="[section.class, size.class]">
           <input type="checkbox" name="check" value="value1" />
           <span class="as-text">多选1</span>
         </label>
-        <label class="sav-check" :class="section.class">
+        <label class="sav-check" :class="[section.class, size.class]">
           <input type="checkbox" checked name="check" value="value2" />
           <span class="as-text">多选2</span>
         </label>
-        <label class="sav-check is-disabled" :class="section.class">
+        <label class="sav-check is-disabled" :class="[section.class, size.class]">
           <input type="checkbox" disabled name="check" value="value2" />
           <span class="as-text">禁用</span>
         </label>
       </div>
       <p></p>
     </section>
-    <textarea class="sav-text"></textarea>
-    <textarea class="sav-text" disabled></textarea>
+    </template>
+    <h3>多行文本</h3>
+    <section v-for="section in sections">
+      <textarea class="sav-text" :class="[section.class]"></textarea>
+      <textarea class="sav-text" :class="[section.class]" disabled></textarea>
+    </section>
+    <h3>Font-Awesome</h3>
+    <section>
+      <template v-for="f in fa">
+        <button class="sav-btn is-square is-sm"><i :class="f"></i></button>
+      </template>
+    </section>
+    <h3>Photon</h3>
+    <section>
+      <template v-for="f in pt">
+        <button class="sav-btn is-square is-circle is-sm"><i :class="f"></i></button>
+      </template>
+    </section>
   </div>
   
   <script type="text/javascript" src="http://cdn.bootcss.com/vue/2.5.16/vue.js"></script>
@@ -60,7 +123,15 @@
           {class: 'is-success', text: '成功元素'},
           {class: 'is-warn', text: '警告元素'}, 
           {class: 'is-error', text: '失败元素'},
-        ]
+        ],
+        sizes: [
+          {class: 'is-xs', text: '最小尺寸'},
+          {class: 'is-sm', text: '小尺寸'},
+          {class: '', text: '正常尺寸'},
+          {class: 'is-lg', text: '大尺寸'},
+        ],
+        fa,
+        pt,
       }
     })
   </script>
