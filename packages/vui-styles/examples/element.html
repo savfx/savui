@@ -9,6 +9,62 @@
   <script type="text/javascript" src="../dist/icons/font-awesome.js"></script>
   <script type="text/javascript" src="../dist/icons/photon.js"></script>
   <div id="app">
+    <h3>垂直按钮组</h3>
+    <section>
+      <div class="sav-btn-group is-vertical">
+        <button class="sav-btn">Yes</button>
+        <button class="sav-btn">MayBe</button>
+        <button class="sav-btn">No</button>
+      </div>
+       <div class="sav-btn-group is-vertical">
+        <button class="sav-btn is-selected">Yes</button>
+        <button class="sav-btn">MayBe</button>
+        <button class="sav-btn">No</button>
+      </div>
+      <div class="sav-btn-group is-vertical">
+        <button class="sav-btn is-success is-selected">Yes</button>
+        <button class="sav-btn">MayBe</button>
+        <button class="sav-btn">No</button>
+      </div>
+      <div class="sav-btn-group is-vertical">
+        <button class="sav-btn">Yes</button>
+        <button class="sav-btn is-info is-selected">MayBe</button>
+        <button class="sav-btn">No</button>
+      </div>
+      <div class="sav-btn-group is-vertical">
+        <button class="sav-btn">Yes</button>
+        <button class="sav-btn">MayBe</button>
+        <button class="sav-btn is-error is-selected">No</button>
+      </div>
+    </section>
+    <h3>水平按钮组</h3>
+    <section>
+      <div class="sav-btn-group is-horizontal">
+        <button class="sav-btn">Yes</button>
+        <button class="sav-btn">MayBe</button>
+        <button class="sav-btn">No</button>
+      </div>
+      <div class="sav-btn-group is-horizontal">
+        <button class="sav-btn">Yes</button>
+        <button class="sav-btn is-selected">MayBe</button>
+        <button class="sav-btn">No</button>
+      </div>
+      <div class="sav-btn-group is-horizontal">
+        <button class="sav-btn is-success is-selected">Yes</button>
+        <button class="sav-btn">MayBe</button>
+        <button class="sav-btn">No</button>
+      </div>
+      <div class="sav-btn-group is-horizontal">
+        <button class="sav-btn">Yes</button>
+        <button class="sav-btn is-info is-selected">MayBe</button>
+        <button class="sav-btn">No</button>
+      </div>
+      <div class="sav-btn-group is-horizontal">
+        <button class="sav-btn">Yes</button>
+        <button class="sav-btn">MayBe</button>
+        <button class="sav-btn is-error is-selected">No</button>
+      </div>
+    </section>
     <h3>按钮图标</h3>
     <section>
       <button class="sav-btn">
@@ -40,6 +96,36 @@
         <span>Icon</span>
         <i class="is-icon-close is-error"></i>
       </button>
+      <button class="sav-btn">
+        <i class="is-icon-loading is-success"></i>
+        <span>Icon</span>
+      </button>
+      <button class="sav-btn is-loading">
+        <span>Loading</span>
+      </button>
+      <button class="sav-btn is-loading is-info">
+        <span>Loading</span>
+      </button>
+    </section>
+    <h3>按钮装饰</h3>
+    <section>
+      <button class="sav-btn is-xs">is-xs</button>
+      <button class="sav-btn is-sm">is-sm</button>
+      <button class="sav-btn">normal</button>
+      <button class="sav-btn is-lg">is-lg</button>
+
+      <button class="sav-btn is-primary">is-primary</button>
+      <button class="sav-btn is-info">is-info</button>
+      <button class="sav-btn is-success">is-success</button>
+      <button class="sav-btn is-warn">is-warn</button>
+      <button class="sav-btn is-error">is-error</button>
+
+      <button class="sav-btn is-shadow">is-shadow</button>
+      <button class="sav-btn is-shadow is-primary">is-primary</button>
+      <button class="sav-btn is-shadow is-info">is-info</button>
+      <button class="sav-btn is-shadow is-success">is-success</button>
+      <button class="sav-btn is-shadow is-warn">is-warn</button>
+      <button class="sav-btn is-shadow is-error">is-error</button>
     </section>
     <template v-for="(size, sindex) in sizes">
     <h3>{{size.text}}</h3>
@@ -97,15 +183,17 @@
       <textarea class="sav-text" :class="[section.class]" disabled></textarea>
     </section>
     <h3>Font-Awesome</h3>
-    <section>
+    <section class="sav-btn-group is-horizontal">
       <template v-for="f in fa">
         <button class="sav-btn is-square is-xs"><i class="is-info" :class="f"></i></button>
       </template>
     </section>
     <h3>Photon</h3>
-    <section>
+    <section class="sav-btn-group is-horizontal">
       <template v-for="f in pt">
-        <button class="sav-btn is-square is-circle is-xs"><i class="is-warn" :class="f"></i></button>
+        <button class="sav-btn is-square is-circle is-xs">
+          <i class="is-warn" :class="f"></i>
+        </button>
       </template>
     </section>
   </div>

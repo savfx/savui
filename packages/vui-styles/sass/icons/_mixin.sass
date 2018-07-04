@@ -1,15 +1,22 @@
 
 // 加载中
-=make-icon-loader
-  border: 2px solid #dbdbdb
-  border-radius: 290486px
-  border-right-color: transparent
-  border-top-color: transparent
-  content: ''
-  display: block
+=make-icon-loading($color)
+  pointer-events: none
+  color: transparent !important
   position: relative
-  height: 1em
-  width: 1em
+  +unselectable
+  &::after
+    border: 2px solid transparent
+    border-radius: 100000px
+    border-left-color: $color
+    border-bottom-color: $color
+    content: ''
+    position: absolute
+    height: 1em
+    width: 1em
+    left: calc(50% - 0.5em - 2px)
+    top: calc(50% - 0.5em - 2px)
+    +make-spin-around
 
 // icon子件
 =make-icon-addon
