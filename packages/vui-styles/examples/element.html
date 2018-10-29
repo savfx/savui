@@ -9,6 +9,30 @@
   <script type="text/javascript" src="../dist/icons/font-awesome.js"></script>
   <script type="text/javascript" src="../dist/icons/photon.js"></script>
   <div id="app">
+    <h3>菜单</h3>
+    <section>
+      <div :class="['sav-dropdown', isDropOpen, isDropAlign, isDropTop && 'is-top', isDropExpand && 'is-expand' ]"
+        @mouseenter="isDropDown = true" @mouseleave="isDropDown = false">
+        <button :class="['sav-btn']">
+          <span>dropdown-select</span><i class="as-icon sav-icon-caret"></i>
+        </button>
+        <ul class="as-dropview is-drop-select">
+          <li class="as-item"><a >select-item-1</a></li>
+          <li class="as-item"><a >select-item-2</a></li>
+          <li class="as-item is-active">
+            <a>select-item-3</a>
+            <i :class="['as-icon sav-icon-right']"></i>
+          </li>
+          <li class="as-item"><a >select-item-4</a></li>
+          <li class="as-item"><a >select-item-5</a></li>
+          <li class="as-item"><i :class="['as-icon fa-google']"></i><a >select-item-6</a></li>
+          <li class="as-item"><i :class="['as-icon fa-github']"></i><a >select-item-7</a></li>
+          <li class="as-item"><a >select-item-8</a></li>
+          <li class="as-item"><a >select-item-9</a></li>
+          <li class="as-item"><a >select-item-10</a></li>
+        </ul>
+      </div>
+    </section>
     <h3>输入框组</h3>
     <section>
       <div class="sav-input-group has-icon-left">
@@ -17,22 +41,53 @@
       </div>
       <div class="sav-input-group has-icon-right">
         <input type="text" class="sav-input">
-        <i class="is-right is-icon-close"></i>
+        <i class="is-right sav-icon-close"></i>
       </div>
       <div class="sav-input-group has-icon-left has-icon-right">
         <input type="text" class="sav-input">
         <i class="is-left fa-github"></i>
-        <i class="is-right is-icon-loading"></i>
+        <i class="is-right sav-icon-loading"></i>
+      </div>
+      <div class="sav-input-group has-icon-left has-icon-right is-lg">
+        <input type="text" class="sav-input is-lg">
+        <i class="is-left fa-github"></i>
+        <i class="is-right sav-icon-loading"></i>
       </div>
       <div class="sav-input-group has-icon-left has-icon-right is-sm">
         <input type="text" class="sav-input is-sm">
         <i class="is-left fa-github"></i>
-        <i class="is-right is-icon-loading"></i>
+        <i class="is-right sav-icon-loading"></i>
       </div>
       <div class="sav-input-group has-icon-left has-icon-right is-xs">
         <input type="text" class="sav-input is-xs">
         <i class="is-left fa-github"></i>
-        <i class="is-right is-icon-loading"></i>
+        <i class="is-right sav-icon-loading"></i>
+      </div>
+      <p></p>
+      <div class="sav-input-group has-icon-left has-icon-right">
+        <input type="text" class="sav-input">
+        <i class="is-left fa-github"></i>
+        <i class="is-right sav-icon-right"></i>
+      </div>
+      <div class="sav-input-group has-icon-left has-icon-right is-lg">
+        <input type="text" class="sav-input is-lg">
+        <i class="is-left fa-github"></i>
+        <i class="is-right sav-icon-right"></i>
+      </div>
+      <div class="sav-input-group has-icon-left has-icon-right is-sm">
+        <input type="text" class="sav-input is-sm">
+        <i class="is-left fa-github"></i>
+        <i class="is-right sav-icon-right"></i>
+      </div>
+      <div class="sav-input-group has-icon-left has-icon-right is-xs">
+        <input type="text" class="sav-input is-xs">
+        <i class="is-left fa-github"></i>
+        <i class="is-right sav-icon-right"></i>
+      </div>
+      <div class="sav-input-group has-icon-left has-icon-right is-xs">
+        <input type="text" class="sav-input is-xs">
+        <i class="is-left fa-github"></i>
+        <i class="is-right sav-icon-close"></i>
       </div>
     </section>
     <h3>垂直按钮组</h3>
@@ -108,22 +163,22 @@
     <section>
       <button class="sav-btn has-hover-open">
         <span>Icon</span>
-        <i class="is-icon-caret is-primary"></i>
+        <i class="sav-icon-caret is-primary"></i>
       </button>
       <button class="sav-btn has-hover-open">
         <span>Icon</span>
-        <i class="is-icon-arrow is-info"></i>
+        <i class="sav-icon-arrow is-info"></i>
       </button>
       <button class="sav-btn">
         <span>Icon</span>
-        <i class="is-icon-right is-warn"></i>
+        <i class="sav-icon-right is-warn"></i>
       </button>
       <button class="sav-btn">
         <span>Icon</span>
-        <i class="is-icon-close is-error"></i>
+        <i class="sav-icon-close is-error"></i>
       </button>
       <button class="sav-btn">
-        <i class="is-icon-loading is-success"></i>
+        <i class="sav-icon-loading is-success"></i>
         <span>Icon</span>
       </button>
       <button class="sav-btn is-loading">
@@ -161,7 +216,7 @@
       <button class="sav-btn is-disabled" :class="[section.class, size.class]">禁用</button>
       <button class="sav-btn has-hover-open" :class="[section.class, size.class]">
         <span>Icon</span>
-        <i class="is-icon-arrow"></i>
+        <i class="sav-icon-arrow"></i>
       </button>
       <button class="sav-btn is-disabled" :class="[section.class, size.class]">禁用</button>
       <button class="sav-btn is-square" :class="[section.class, size.class]">
@@ -246,7 +301,16 @@
         ],
         fa,
         pt,
-      }
+        isDropTop: false,
+        isDropExpand: false,
+        isDropDown: false,
+        isDropAlign: ''
+      },
+      computed: {
+        isDropOpen: function () {
+          return this.isDropDown ? 'is-open' : ''
+        }
+      },
     })
   </script>
 

@@ -1,0 +1,29 @@
+
+$select-background-color: $element-background-color !default
+$select-hover-background-color: darken($select-background-color, 5) !default
+$select-active-background-color: darken($select-background-color, 10) !default
+
+.is-drop-select
+  +resetul
+  max-height: 240px
+
+  >.as-item
+    line-height: $element-line-height // 行高
+    font-size: $element-font-size
+    padding: $element-padding-height $element-padding-width
+
+    +unselectable
+    padding: 0.5em 1em
+    cursor: default
+    white-space: nowrap
+
+    > .as-icon
+      +make-icon-addon
+
+    &:hover,
+    &:focus
+      background-color: $select-hover-background-color
+
+    &.is-active,
+    &:active
+      background-color: $select-active-background-color

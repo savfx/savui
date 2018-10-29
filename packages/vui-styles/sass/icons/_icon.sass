@@ -3,44 +3,44 @@
 $icon-default-bd-color: darken($element-border-color, 10) !default
 
 // 垂直三角
-.is-icon-caret
+.sav-icon-caret
   &::after
     +make-icon-caret($icon-default-bd-color)
 
 // 对号
-.is-icon-right
+.sav-icon-right
   &::after
     +make-icon-right($icon-default-bd-color)
 
 // 下箭头
-.is-icon-arrow
+.sav-icon-arrow
   &::after
     +make-icon-arrow($icon-default-bd-color)
 
 // 关闭
-.is-icon-close
+.sav-icon-close
   +make-icon-close($icon-default-bd-color)
 
 // 加载中
-.is-icon-loading
+.sav-icon-loading
   +make-icon-loading($icon-default-bd-color)
 
-.is-icon-wrap,
-.is-icon-loading,
-.is-icon-caret,
-.is-icon-right,
-.is-icon-arrow,
-.is-icon-close
+.sav-icon-wrap,
+.sav-icon-loading,
+.sav-icon-caret,
+.sav-icon-right,
+.sav-icon-arrow,
+.sav-icon-close
   +make-icon-wrap
 
 // 三角箭头翻转
 .is-open,
 .has-hover-open:hover
-  .is-icon-caret::after
+  .sav-icon-caret::after
     -webkit-transform: rotate(180deg) translateY(50%)
     transform: rotate(180deg) translateY(50%)
 
-  .is-icon-arrow::after
+  .sav-icon-arrow::after
     -webkit-transform: rotate(408deg)
     transform: rotate(408deg)
     top: 0.35em

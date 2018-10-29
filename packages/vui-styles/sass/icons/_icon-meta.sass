@@ -1,17 +1,17 @@
 
 =make-icons-variant($color)
-  .is-icon-arrow
+  .sav-icon-arrow
     &::after
       border-left-color: $color
       border-top-color: $color
-  .is-icon-caret
+  .sav-icon-caret
     &::after
       border-top-color: $color
-  .is-icon-right
+  .sav-icon-right
     &::after
       border-left-color: $color
       border-bottom-color: $color
-  .is-icon-close
+  .sav-icon-close
     &::before,
     &::after
       background-color: $color
@@ -27,22 +27,22 @@
       &:active
         +make-icons-variant($text-light-color)
 
-    &.is-icon-arrow
+    &.sav-icon-arrow
       &::after
         border-left-color: $theme-color
         border-top-color: $theme-color
-    &.is-icon-caret
+    &.sav-icon-caret
       &::after
         border-top-color: $theme-color
-    &.is-icon-right
+    &.sav-icon-right
       &::after
         border-left-color: $theme-color
         border-bottom-color: $theme-color
-    &.is-icon-close
+    &.sav-icon-close
       &::before,
       &::after
         background-color: $theme-color
-    &.is-icon-loading
+    &.sav-icon-loading
       &::after
         border-left-color: $theme-color
         border-bottom-color: $theme-color

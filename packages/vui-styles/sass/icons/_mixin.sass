@@ -34,7 +34,7 @@
 
 // 特殊ICON容器
 =make-icon-wrap
-  text-align: left
+  text-align: center
   display: inline-block
   position: relative
   width: 1em
@@ -46,6 +46,7 @@
   border: 0.45em solid transparent
   position: absolute
   top: 0.3em
+  left: 0.15em
   content: ''
   transition: all 0.3s
   box-sizing: border-box
@@ -59,6 +60,7 @@
   width: 1em
   height: 0.55em
   min-height: 8px
+  left: 0
   content: ''
   transform: rotate(-55deg)
   -webkit-transform: rotate(-55deg) translate3d(0, 0, 0)
@@ -96,6 +98,7 @@
     content: ''
     width: 100%
     top: 0.4em
+    left: 0
     height: 2px
     @if $color
       background-color: $color

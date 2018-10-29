@@ -72,46 +72,42 @@
   display: inline-block
   &.has-icon-left
     >.sav-input
-      padding-left: $element-padding-width *2 / 3 * 4
+      padding-left: calc(#{$element-padding-height *2} + #{$element-font-size})
     >.is-left
       position: absolute
       top: calc(50% - #{$element-padding-height})
-      left: $element-padding-width
-      &.is-sm
-        >.sav-input
-          padding-left: $element-padding-width-sm *2 / 3 * 4
-        >.is-left
-          top: calc(50% - #{$element-padding-height-sm})
-          left: $element-padding-width-sm
-      &.is-xs
-        >.sav-input
-          padding-left: $element-padding-width-xs *2 / 3 * 4
-        >.is-left
-          top: calc(50% - #{$element-padding-height-xs})
-          left: $element-padding-width-xs
+      left: $element-padding-height
+    &.is-lg
+      >.sav-input
+        padding-left: calc(#{$element-padding-height-lg *2} + #{$element-font-size-lg})
+    &.is-sm
+      >.sav-input
+        padding-left: calc(#{$element-padding-height-sm *2} + #{$element-font-size-sm})
+    &.is-xs
+      >.sav-input
+        padding-left: calc(#{$element-padding-height-xs *2} + #{$element-font-size-xs})
+      >.is-left
+        top: calc(50% - #{$element-padding-height-xs * 2})
+        left: $element-padding-height-xs
   &.has-icon-right
     >.sav-input
-      padding-right: $element-padding-width *2 / 3 * 4
+      padding-right: calc(#{$element-padding-height *2} + #{$element-font-size})
     >.is-right
       position: absolute
       top: calc(50% - #{$element-padding-height})
-      right: $element-padding-width
+      right: $element-padding-height
+    &.is-lg
+      >.sav-input
+        padding-right: calc(#{$element-padding-height-lg *2} + #{$element-font-size-lg})
     &.is-sm
       >.sav-input
-        padding-right: $element-padding-width-sm *2 / 3 * 4
-      >.is-right
-        top: calc(50% - #{$element-padding-height-sm})
-        right: $element-padding-width-sm
+        padding-right: calc(#{$element-padding-height-sm *2} + #{$element-font-size-sm})
     &.is-xs
       >.sav-input
-        padding-right: $element-padding-width-xs *2 / 3 * 4
+        padding-right: calc(#{$element-padding-height-xs *2} + #{$element-font-size-xs})
       >.is-right
-        top: calc(50% - #{$element-padding-height-xs})
-        right: $element-padding-width-xs
-
-  // &.is-xs
-  //   font-size: $element-font-size-xs
-  //   padding: $element-padding-height-xs $element-padding-width-xs *2 / 3
-  // &.is-lg
-  //   font-size: $element-font-size-lg
-  //   padding: $element-padding-height-lg $element-padding-width-lg *2 / 3
+        top: calc(50% - #{$element-padding-height-xs *2 })
+        right: $element-padding-height-xs
+  >.is-left,
+  >.is-right
+    text-align: center

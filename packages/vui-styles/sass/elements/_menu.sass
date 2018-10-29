@@ -1,0 +1,22 @@
+
+.sav-menu
+  +resetul
+  max-height: 240px
+
+  font-family: $element-font-family // 字体
+  line-height: $element-line-height // 行高
+  font-size: $element-font-size
+
+  > .as-item
+    +unselectable
+    padding: 0.5em 1em
+    cursor: default
+    white-space: nowrap
+
+    &:hover,
+    &:focus
+      background-color: darken($element-background-color, 5)
+
+    &.is-active,
+    &:active
+      background-color: darken($element-background-color, 10)

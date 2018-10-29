@@ -44,7 +44,8 @@
     +make-icon-loading($element-border-color)
   &.is-shadow
     box-shadow: #bbb 0px 2px 6px, #eee 0px 1px 2px
-
+  &.is-borderless
+    border-width: 0
 @each $type, $color in $is-theme-colors
   .sav-btn.#{$type}
     color: $text-light-color
